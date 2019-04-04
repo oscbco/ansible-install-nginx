@@ -1,7 +1,9 @@
 - name: SYSTEM NGINX nginx must be installed
-  apt: pkg={{ item }} state=present
-  with_items:
-  - nginx-light
+  apt:
+    name:
+      - nginx-light
+    state: present
+
   notify: NGINX Restart Nginx Service
 
 - name: SYSTEM NGINX Remove default server on sites-enabled
